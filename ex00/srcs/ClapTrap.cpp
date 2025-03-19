@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 20:15:08 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/16 20:21:13 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:22:33 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,17 @@ void ClapTrap::attack(const std::string &target)
         std::cout << "ClapTrap " << _name << " has no energy points left to attack!" << std::endl;
         return;
     }
-    if (_hitPoints == 0)
+    else if (_hitPoints == 0)
     {
         std::cout << "ClapTrap " << _name << " is already dead and cannot attack!" << std::endl;
         return;
     }
-
-    std::cout << "ClapTrap " << _name << " attacks " << target << ", causing "
-              << _attackDamage << " points of damage!" << std::endl;
-    _energyPoints--;
+    else
+    {
+        std::cout << "ClapTrap " << _name << " attacks " << target << ", causing "
+                  << _attackDamage << " points of damage!" << std::endl;
+        _energyPoints--;
+    }
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -73,8 +75,7 @@ void ClapTrap::takeDamage(unsigned int amount)
         std::cout << "ClapTrap " << _name << " is already dead and cannot take more damage!" << std::endl;
         return;
     }
-
-    if (amount >= _hitPoints)
+    else if (amount >= _hitPoints)
     {
         _hitPoints = 0;
         std::cout << "ClapTrap " << _name << " takes " << amount
@@ -95,16 +96,18 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << _name << " has no energy points left to repair itself!" << std::endl;
         return;
     }
-    if (_hitPoints == 0)
+    else if (_hitPoints == 0)
     {
         std::cout << "ClapTrap " << _name << " is already dead and cannot be repaired!" << std::endl;
         return;
     }
-
-    _hitPoints += amount;
-    std::cout << "ClapTrap " << _name << " repairs itself for " << amount
-              << " hit points! Current hit points: " << _hitPoints << std::endl;
-    _energyPoints--;
+    else
+    {
+        _hitPoints += amount;
+        std::cout << "ClapTrap " << _name << " repairs itself for " << amount
+                  << " hit points! Current hit points: " << _hitPoints << std::endl;
+        _energyPoints--;
+    }
 }
 
 // Getters
