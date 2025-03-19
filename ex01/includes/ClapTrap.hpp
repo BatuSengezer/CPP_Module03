@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 20:19:57 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 11:56:48 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:17:15 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ protected:
     unsigned int _hitPoints;
     unsigned int _energyPoints;
     unsigned int _attackDamage;
+
+    // Constructor for derived classes
+    ClapTrap(const std::string &name, unsigned int hp, unsigned int ep, unsigned int ad);
 
 public:
     // Orthodox Canonical Form

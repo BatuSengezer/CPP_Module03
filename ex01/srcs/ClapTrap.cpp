@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 20:15:08 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 11:22:33 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:21:18 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 {
     std::cout << "ClapTrap copy constructor called" << std::endl;
     *this = other;
+}
+
+ClapTrap::ClapTrap(const std::string &name, unsigned int hp, unsigned int ep, unsigned int ad)
+    : _name(name), _hitPoints(hp), _energyPoints(ep), _attackDamage(ad)
+{
+    std::cout << "ClapTrap parametric constructor called for " << _name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
