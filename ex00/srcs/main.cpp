@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 20:20:01 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 10:52:23 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:28:35 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main()
 {
     // Create ClapTrap instances
-    ClapTrap clap1("CL4P-TP");
-    ClapTrap clap2("FR4G-TP");
+    ClapTrap clap1("CLAP-1");
+    ClapTrap clap2("CLAP-2");
 
     // Test basic functionality
     clap1.attack("Bandit");
